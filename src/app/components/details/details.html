@@ -1,0 +1,26 @@
+
+<div class="ipro-details-container">
+  <div class="ipro-details">
+    <div class="align-right"><a class="material-btn" ng-href="/">Retour</a></div>
+    <h2>{{details.piece.name}}</h2>
+    <div class="ipro-details-pic">
+      <img class="pic-img" ng-src="{{index.basePicUrl + details.piece.pic}}"/>
+    </div>
+    <div>
+      <b>Voiture</b> : {{details.piece.car}}
+      <br/><b>Marque</b> : {{details.piece.vendor}}
+      <br/><b>Etat</b> : {{details.piece.state}}
+      <hr/><b>Description</b> : <br/>{{details.piece.desc}}
+      <hr/>
+    </div>
+    <div>
+      Prix à l'unité : <span class="ipro-details-price">${{details.piece.cost}}</span>
+    </div>
+    <br/>
+    <div class="align-right">
+      <div class="material-btn" ng-click="details.addToCart()">
+        Ajouter au panier <i class="fa fa-plus"></i>
+      </div>
+    </div>
+  </div>
+</div>

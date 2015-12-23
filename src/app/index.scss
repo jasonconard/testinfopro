@@ -11,6 +11,9 @@ $header-height: 50px;
 $footer-height: 50px;
 
 $dark-blue : #11181a;
+$normal-blue: royalblue;
+
+$normal-red: firebrick;
 
 /**********************************************/
 /**********          Mixins          **********/
@@ -54,11 +57,33 @@ body {
   @include box-shadow(0 4px 3px rgba(0,0,0,0.6), 0 -2px 1px rgba(0,0,0,0.1));
 }
 
+.material-btn {
+  @extend .material-shad-2;
+
+  display: inline-block;
+  background-color: $normal-blue;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 2px;
+  @include transition(200ms box-shadow ease-out);
+
+  &:hover {
+    @extend .material-shad-3;
+    cursor: pointer;
+  }
+}
+
+a.material-btn {
+  &:hover,&:active,&:link,&:visited {
+    text-decoration: none;
+  }
+}
+
 .material-round-btn {
   @extend .material-shad-2;
   display: inline-block;
   color: white;
-  background-color: royalblue;
+  background-color: $normal-blue;
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -72,6 +97,17 @@ body {
     cursor: pointer;
     @extend .material-shad-3;
   }
+}
+
+.color-blue {
+  background-color: $normal-blue;
+}
+.color-red {
+  background-color: $normal-red;
+}
+
+.align-right {
+  text-align: right;
 }
 
 /**********************************************/
@@ -296,10 +332,34 @@ body {
     vertical-align: middle;
     text-align: center;
 
-    .material-round-btn {
-      background: firebrick;
-    }
+  }
+}
 
+.ipro-details-container {
+  text-align: center;
+}
+
+.ipro-details {
+  @extend .material-shad-1;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  margin: 10px;
+
+  .ipro-details-pic {
+    @extend .material-shad-2;
+    margin: 15px;
+    position: relative;
+
+    img {
+      max-height: 250px;
+    }
+  }
+
+  .ipro-details-price {
+    display: inline-block;
+    @extend .material-shad-1;
+    padding: 3px;
   }
 }
 

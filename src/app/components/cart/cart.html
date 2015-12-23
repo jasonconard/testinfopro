@@ -6,7 +6,10 @@
   <div class="ipro-cart-section">
     <div class="ipro-cart-price">${{item.cost}}</div>
     <div class="ipro-cart-delete">
-      <div class="material-round-btn" ng-click="cartCtrl.removeItem($index)">
+      <div class="material-round-btn color-blue" ng-click="index.showItem(item.ref)">
+        <i class="fa fa-eye"></i>
+      </div>
+      <div class="material-round-btn color-red" ng-click="cartCtrl.removeItem($index)">
         <i class="fa fa-trash"></i>
       </div>
     </div>

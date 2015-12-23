@@ -1,6 +1,6 @@
 <div class="ipro-piece-container">
   <h2>Liste des pièces disponibles</h2>
-  <div class="ipro-piece" ng-repeat="piece in index.pieces" ng-click="index.addToCart($index)">
+  <div class="ipro-piece" ng-repeat="piece in index.pieces" ng-click="index.showItem(piece.ref)">
     <img ng-src="{{index.basePicUrl + piece.pic}}"/>
     <div class="ipro-piece-footer">
       <div class="ipro-piece-part">
