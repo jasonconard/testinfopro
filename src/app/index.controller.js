@@ -98,6 +98,9 @@
      * @param {Number} index
      */
     function addToCart(index) {
+      if(vm.cart.length === 0) {
+        vm.cartPanelOpen = true;
+      }
       vm.cart.push(vm.pieces[index]);
       refreshSum();
     }
