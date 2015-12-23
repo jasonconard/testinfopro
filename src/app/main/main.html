@@ -1,0 +1,21 @@
+<div class="ipro-piece-container">
+  <h2>Liste des pièces disponibles</h2>
+  <div class="ipro-piece" ng-repeat="piece in index.pieces" ng-click="index.addToCart($index)">
+    <img ng-src="{{index.basePicUrl + piece.pic}}"/>
+    <div class="ipro-piece-footer">
+      <div class="ipro-piece-part">
+        <div class="ipro-piece-title-content">
+          <div class="ipro-piece-title">{{piece.name}}</div>
+          <div class="ipro-piece-subtitle">{{piece.car}}</div>
+        </div>
+        <div class="ipro-piece-cost-content">
+          ${{piece.cost}}
+        </div>
+
+      </div>
+      <div class="ipro-piece-part alone-part">
+        <span ng-if="piece.desc">"{{piece.desc}}"</span>
+      </div>
+    </div>
+  </div>
+</div>

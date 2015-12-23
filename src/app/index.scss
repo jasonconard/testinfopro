@@ -1,0 +1,309 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+
+/**********************************************/
+/**********         Variables        **********/
+/**********************************************/
+$header-height: 50px;
+$footer-height: 50px;
+
+$dark-blue : #11181a;
+
+/**********************************************/
+/**********          Mixins          **********/
+/**********************************************/
+@mixin box-shadow($params...) {
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  box-shadow: $params;
+}
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
+/**********************************************/
+/**********         HTML tags        **********/
+/**********************************************/
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+
+
+/**********************************************/
+/****         Material design IMPL        *****/
+/**********************************************/
+.material-shad-1 {
+  @include box-shadow(0 2px 1px rgba(0,0,0,0.4), 0 -1px 1px rgba(0,0,0,0.1));
+}
+.material-shad-2 {
+  @include box-shadow(0 3px 2px rgba(0,0,0,0.5), 0 -1px 1px rgba(0,0,0,0.1));
+}
+.material-shad-3 {
+  @include box-shadow(0 4px 3px rgba(0,0,0,0.6), 0 -2px 1px rgba(0,0,0,0.1));
+}
+
+.material-round-btn {
+  @extend .material-shad-2;
+  display: inline-block;
+  color: white;
+  background-color: royalblue;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 15px;
+
+  @include transition(box-shadow 200ms ease-out);
+
+  &:hover {
+    cursor: pointer;
+    @extend .material-shad-3;
+  }
+}
+
+/**********************************************/
+/**********         Ipro CSS         **********/
+/**********************************************/
+.ipro-header{
+  @extend .material-shad-2;
+  height: $header-height;
+  background: $dark-blue;
+  color : white;
+  width:  100%;
+  text-align: right;
+  line-height: $header-height;
+  vertical-align: middle;
+  padding: 0 10px;
+
+  .ipro-header-cart {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    vertical-align: middle;
+    background: #3f4e6c;
+    color: white;
+    border-radius: 2px;
+    margin: 0 10px;
+  }
+}
+
+.ipro-cart-panel {
+  @extend .material-shad-3;
+  position: fixed;
+  z-index: 2;
+  right: -250px;
+  top: $header-height;
+  height: calc(100vh - #{$header-height});
+  width: 250px;
+  background: white;
+  overflow: auto;
+  padding: 10px;
+  font-size: 1.2em;
+  @include transition(200ms right ease-out);
+
+  &.panel-open {
+    right: 0;
+  }
+}
+
+.ipro-container{
+  position: relative;
+  height: calc(100vh - #{$header-height});
+  overflow: auto;
+
+  .ipro-content {
+    padding: 8px;
+    min-height: calc(100% - #{$footer-height});
+  }
+}
+
+.ipro-footer{
+  @extend .material-shad-2;
+  height: $footer-height;
+  background: $dark-blue;
+  color : white;
+  width: 100%;
+  text-align: right;
+  line-height: $footer-height;
+  font-size: 1.2em;
+  padding: 0 10px;
+}
+
+.ipro-piece-container {
+  margin: 0 5%;
+  text-align: center;
+}
+
+.ipro-piece {
+  @extend .material-shad-1;
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+  border-radius: 2px;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  text-align: left;
+
+  img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .ipro-piece-footer {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    height: 120px;
+    width: 100%;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    @include transition(200ms bottom ease-out, 200ms background ease-out);
+
+    .ipro-piece-part {
+      position: relative;
+      width: 100%;
+      height: 60px;
+
+      &.alone-part {
+        padding: 5px;
+        font-style: italic;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    .ipro-piece-footer{
+      bottom: 0;
+      background: rgba(0,0,0,0.8);
+    }
+  }
+}
+
+.ipro-piece-title-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - 60px);
+  height: 60px;
+  padding: 5px;
+  .ipro-piece-title {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  .ipro-piece-subtitle {
+    font-style: italic;
+  }
+}
+
+.ipro-piece-cost-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  vertical-align: middle;
+
+  font-size: 1.5em;
+}
+
+.ipro-cart-elem {
+  @extend .material-shad-2;
+  position: relative;
+  width: 200px;
+  height: 80px;
+  background: #eeeeee;
+  border-radius: 4px;
+  margin: 10px 5px;
+
+  transform: scale(1, 1);
+  @include transition(200ms transform ease-out);
+
+  &.ng-enter{
+    transform: scale(0, 0);
+  }
+  &.ng-enter-active{
+    transform: scale(1, 1);
+  }
+  &.ng-leave{
+    transform: scale(1, 1);
+  }
+  &.ng-leave-active{
+    transform: scale(0, 0);
+  }
+
+  .ipro-cart-section {
+    position: relative;
+    width: 100%;
+    height: 50%;
+  }
+  .ipro-cart-thumbnail{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+    border-right: 1px solid rgba(0,0,0,0.1);
+  }
+  .ipro-cart-name{
+    display: inline-block;
+    position: absolute;
+    right : 0;
+    top: 0;
+    height: 40px;
+    width: 150px;
+    padding: 5px 3px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+
+  }
+  .ipro-cart-price{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.1);
+
+  }
+  .ipro-cart-delete{
+    display: inline-block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+
+    .material-round-btn {
+      background: firebrick;
+    }
+
+  }
+}
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// injector
+// endinjector
