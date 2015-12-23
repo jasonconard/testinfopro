@@ -1,2 +1,2 @@
 # testinfopro
-Access to gh-pages with : https://github.com/jasonconard/testinfopro/pages/index.html
+Access to gh-pages with : http://jasonconard.github.io/testinfopro/pages/#/
