@@ -1,2 +1,2 @@
 # testinfopro
-Test exercices for InfoPro
+Access to gh-pages with : https://github.com/jasonconard/testinfopro/pages/index.html
