@@ -29,6 +29,7 @@
 
     function removeAllItem() {
       indexCtrl.cart = [];
+      indexCtrl.refreshSum();
     }
   }
 })();
