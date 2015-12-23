@@ -3,9 +3,9 @@ Test exercices for InfoPro
 
 
 Just need to launch : 
-npm install
-bower install
-gulp serve (for dev)
+npm install,
+bower install,
+gulp serve (for dev),
 gulp (for build)
 
 -------------
